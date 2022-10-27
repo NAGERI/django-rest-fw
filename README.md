@@ -22,6 +22,8 @@ git clone https://github.com/NAGERI/django-rest-fw.git <folder-name>
 
   ```
   virtualenv env
+
+  python -m virtualenv env # for windows
   ```
 
 - Activate your virtual environment.
