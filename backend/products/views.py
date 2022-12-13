@@ -8,10 +8,11 @@ from .models import Product
 from .permissons import IsStaffEditorPermission
 from .serializers import ProductSerializer
 
+from api.authentication import TokenAuthentication
 class ProductListCreateAPIView(generics.ListCreateAPIView):
   queryset = Product.objects.all()
   serializer_class = ProductSerializer
-  authentication_classes = [authentication.SessionAuthentication]
+  authentication_classes = [authentication.SessionAuthentication,TokenAuthentication]
   permission_classes = [permissions.IsAdminUser,IsStaffEditorPermission]
   # The first permission ordered is the first to be matched
 
