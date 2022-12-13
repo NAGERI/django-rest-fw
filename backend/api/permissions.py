@@ -10,7 +10,8 @@ class IsStaffEditorPermission(permissions.DjangoModelPermissions):
         'PUT': ['%(app_label)s.change_%(model_name)s'],
         'PATCH': ['%(app_label)s.change_%(model_name)s'],
         'DELETE': ['%(app_label)s.delete_%(model_name)s'],
-    } 
+    }
+
   """
   def has_permission(self, request, view):
     if not request.user.is_staff: # This can check a payment layer
@@ -25,4 +26,4 @@ class IsStaffEditorPermission(permissions.DjangoModelPermissions):
       return True
     #default should return False
     return False
-    """
+  """
