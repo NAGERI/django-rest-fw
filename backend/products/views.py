@@ -19,9 +19,9 @@ class ProductListCreateAPIView(
 
   def perform_create(self, serializer):
     title = serializer.validated_data.get('title')
-    content = serializer.validated_data.get('content')
+    content = serializer.validated_data.get('content') or None
     if content is None:
-      content = "THis is a single view"
+      content = "This is a single view with defualt content"
     serializer.save(content=content)
     # Send a django signal
 product_list_create_view = ProductListCreateAPIView.as_view()
